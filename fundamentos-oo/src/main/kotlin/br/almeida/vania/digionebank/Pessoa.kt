@@ -4,18 +4,15 @@ class Pessoa {
 
     var nome: String = "Vania"
     var cpf: String = "123.123.123-12"
-
-    inner class Endereco {
-        var rua: String = "minha rua"
-    }
+    private set
 }
 
 fun main() {
     val pessoa = Pessoa()
 
+  //  pessoa.cpf = "233.455.667-88"
+
     println(pessoa.nome)
     println(pessoa.cpf)
 
-
-    println(pessoa.Endereco().rua)
 }
