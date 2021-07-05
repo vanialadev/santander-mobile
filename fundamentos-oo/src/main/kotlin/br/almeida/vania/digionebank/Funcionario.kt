@@ -2,9 +2,11 @@ package br.almeida.vania.digionebank
 
 import java.math.BigDecimal
 
-class Funcionario(
+abstract class Funcionario(
     nome: String,
     cpf: String,
     val salario: BigDecimal
 ) : Pessoa(nome, cpf) {
+
+    abstract fun calcularAuxilio(): BigDecimal
 }

@@ -1,6 +1,6 @@
 package br.almeida.vania.digionebank
 
-open class Pessoa(
+abstract class Pessoa(
     var nome: String,
     var cpf: String,
 ) {
