@@ -3,4 +3,6 @@
     <string name="imagem_do_contato">imagem do contato</string>
     <string name="menu_1">Menu 1</string>
     <string name="menu_2">Menu 2</string>
+    <string name="open_drawer">Aberto</string>
+    <string name="close_drawer">Fechado</string>
 </resources>
