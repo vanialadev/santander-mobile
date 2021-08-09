@@ -1,8 +1,10 @@
 package com.vaniala.notesprovider
 
 import android.database.Cursor
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.provider.BaseColumns._ID
 import androidx.loader.app.LoaderManager
 import androidx.loader.content.CursorLoader
 import androidx.loader.content.Loader
@@ -21,15 +23,27 @@ class MainActivity : AppCompatActivity(), LoaderManager.LoaderCallbacks<Cursor> 
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        noteAdd= findViewById(R.id.notes_add)
-            noteRecycler = findViewById(R.id.notes_recycler)
+        noteAdd = findViewById(R.id.notes_add)
+        noteRecycler = findViewById(R.id.notes_recycler)
         noteAdd.setOnClickListener {
 
         }
-notesAdapter = NotesAdapter()
+        notesAdapter = NotesAdapter(object: NoteClickedListener {
+            override fun noteClickItem(cursor: Cursor) {
+                val id = cursor.getLong(cursor.getColumnIndex(_ID))
+
+            }
+
+            override fun noteRemoveItem(cursor: Cursor?) {
+                val id = cursor?.getLong(cursor?.getColumnIndex(_ID))
+                contentResolver.delete(Uri.withAppendedPath(URI_NOTES, id.toString()), null, null)
+
+            }
+
+        })
         notesAdapter.setHasStableIds(true)
         noteRecycler.layoutManager = LinearLayoutManager(this)
-        noteRecycler.adapter= notesAdapter
+        noteRecycler.adapter = notesAdapter
 
     }
 
@@ -37,7 +51,8 @@ notesAdapter = NotesAdapter()
         CursorLoader(this, URI_NOTES, null, null, null, TITLE_NOTES)
 
     override fun onLoadFinished(loader: Loader<Cursor>, data: Cursor?) {
-        if (data == null) { }
+        if (data == null) {
+        }
     }
 
     override fun onLoaderReset(loader: Loader<Cursor>) {
