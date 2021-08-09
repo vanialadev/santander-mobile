@@ -6,12 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-  <view class="androidx.appcompat.app.AlertController$RecycleListView"
+  <androidx.recyclerview.widget.RecyclerView
       android:id="@+id/notes_recycler"
       android:layout_width="match_parent"
       android:layout_height="wrap_content">
 
-  </view>
+  </androidx.recyclerview.widget.RecyclerView>
+
 
    <com.google.android.material.floatingactionbutton.FloatingActionButton
        android:id="@+id/notes_add"

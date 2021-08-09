@@ -16,7 +16,7 @@
             android:id="@+id/note_edt_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/note_title_hint"/>
+            android:hint="@string/note_title_hint"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -31,7 +31,7 @@
             android:id="@+id/note_edt_description"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/note_description_hint"/>
+            android:hint="@string/note_description_hint"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
