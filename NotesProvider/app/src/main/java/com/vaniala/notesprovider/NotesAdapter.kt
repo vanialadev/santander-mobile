@@ -25,6 +25,7 @@ class NotesAdapter(
        mCursor?.moveToPosition(position)
         holder.noteTitle.text = mCursor?.getString(mCursor?.getColumnIndex(TITLE_NOTES) as Int)
         holder.noteDescription.text = mCursor?.getString(mCursor?.getColumnIndex(DESCRIPTION_NOTES) as Int)
+
         holder.noteButtonRemove.setOnClickListener {
             mCursor?.moveToPosition(position)
             listener.noteRemoveItem(mCursor)
@@ -32,6 +33,7 @@ class NotesAdapter(
         }
 
         holder.itemView.setOnClickListener {
+            mCursor?.moveToPosition(position)
             listener.noteClickItem(mCursor!!)
         }
     }
