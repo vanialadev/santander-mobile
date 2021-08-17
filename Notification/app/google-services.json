@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "895268701937",
+    "project_id": "notification-app-eb986",
+    "storage_bucket": "notification-app-eb986.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:895268701937:android:bd42f7592452e742320b50",
+        "android_client_info": {
+          "package_name": "com.vaniala.notification"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "895268701937-1q9detoikmjtjdis55d6bco7atkgnq1d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSENv18aPFi6RMBLMLqiV9dFYlxN4Uxzg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "895268701937-1q9detoikmjtjdis55d6bco7atkgnq1d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
