@@ -22,7 +22,7 @@ fun Context.showNotification(channelId: String, title: String, body: String) {
     notificationManager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
 
     val intent = Intent(this, MainActivity::class.java)
-    val pedingIntent =
+    val pendingIntent =
         PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT)
 
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -39,7 +39,7 @@ fun Context.showNotification(channelId: String, title: String, body: String) {
             setContentText(body)
             setAutoCancel(true)
             setSound(RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE))
-            setContentIntent(pedingIntent)
+            setContentIntent(pendingIntent)
         }
     }
 
