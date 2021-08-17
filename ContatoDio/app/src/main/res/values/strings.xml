@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Contato Dio</string>
+    <string name="name">Nome</string>
+    <string name="telephone">Telefone</string>
 </resources>
