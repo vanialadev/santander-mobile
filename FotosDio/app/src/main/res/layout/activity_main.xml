@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/imageview_image"
-        android:layout_width="400dp"
-        android:layout_height="400dp"
+        android:layout_width="370dp"
+        android:layout_height="370dp"
         android:src="@drawable/image"
         android:scaleType="centerCrop"
         android:contentDescription="@string/imagem_a_ser_selecionado_pelo_usuario" />
@@ -21,6 +21,14 @@
         android:layout_height="wrap_content"
         android:padding="10dp"
         android:text="@string/selecione_uma_imagem"
+        android:layout_margin="16dp"/>
+
+    <Button
+        android:id="@+id/btn_open_camera"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="@string/tirar_uma_foto"
         android:layout_margin="16dp"/>
 
 </LinearLayout>

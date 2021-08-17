@@ -2,4 +2,5 @@
     <string name="app_name">Fotos Dio</string>
     <string name="imagem_a_ser_selecionado_pelo_usuario">Imagem a ser selecionado pelo usuário</string>
     <string name="selecione_uma_imagem">Selecione uma imagem</string>
+    <string name="tirar_uma_foto">tirar uma foto</string>
 </resources>
