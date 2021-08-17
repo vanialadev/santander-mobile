@@ -2,16 +2,16 @@ package com.vaniala.watchdio
 
 import android.app.Activity
 import android.os.Bundle
-import com.vaniala.watchdio.databinding.ActivityMainBinding
+import com.vaniala.watchdio.databinding.ActivityMealBinding
 
-class MainActivity : Activity() {
+class MealActivity : Activity() {
 
-    private lateinit var binding: ActivityMainBinding
+    private lateinit var binding: ActivityMealBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        binding = ActivityMainBinding.inflate(layoutInflater)
+        binding = ActivityMealBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
     }
