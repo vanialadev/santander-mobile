@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">AgendaDio</string>
+    <string name="set_event">Set event</string>
 </resources>
