@@ -1,4 +1,4 @@
-package com.vaniala.filmeflix.model
+package com.vaniala.filmeflix.domain
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName

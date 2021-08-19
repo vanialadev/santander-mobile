@@ -1,13 +1,11 @@
-package com.vaniala.filmeflix.view
+package com.vaniala.filmeflix.presenter
 
-import android.os.Parcel
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.vaniala.filmeflix.R
-import com.vaniala.filmeflix.model.Movie
+import com.vaniala.filmeflix.domain.Movie
 
 class MoviesAdapter(private val moviesList: List<Movie>) :
     RecyclerView.Adapter<MoviesViewHolder>() {

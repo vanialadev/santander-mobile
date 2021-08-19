@@ -1,4 +1,4 @@
-package com.vaniala.filmeflix.view
+package com.vaniala.filmeflix.presenter
 
 import android.view.View
 import androidx.appcompat.widget.AppCompatImageView

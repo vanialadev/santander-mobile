@@ -1,16 +1,19 @@
-package com.vaniala.filmeflix.view
+package com.vaniala.filmeflix.presenter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.widget.ProgressBar
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import com.vaniala.filmeflix.R
-import com.vaniala.filmeflix.model.Movie
-import com.vaniala.filmeflix.viewmodel.MovieListViewModel
+import com.vaniala.filmeflix.domain.Movie
+import com.vaniala.filmeflix.framework.viewmodel.MovieListViewModel
 
 class MainActivity : AppCompatActivity() {
 
     lateinit var moviesList: RecyclerView
+    lateinit var progressBar: ProgressBar
 
     private lateinit var movieListViewModel: MovieListViewModel
 
@@ -19,16 +22,20 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         moviesList = findViewById(R.id.movies_list)
+        progressBar = findViewById(R.id.progressBar)
 
-        movieListViewModel =
-            ViewModelProvider.NewInstanceFactory().create(MovieListViewModel::class.java)
+        movieListViewModel = ViewModelProvider.NewInstanceFactory().create(MovieListViewModel::class.java)
         movieListViewModel.init()
         initObserver()
+        loadingVisibility(true)
     }
 
     private fun initObserver() {
         movieListViewModel.moviesList.observe(this, { list ->
-            populateList(list)
+            if (list.isNotEmpty()) {
+                populateList(list)
+                loadingVisibility(false)
+            }
         })
     }
 
@@ -37,5 +44,9 @@ class MainActivity : AppCompatActivity() {
             hasFixedSize()
             adapter = MoviesAdapter(list)
         }
+    }
+
+    private fun loadingVisibility(isLoading: Boolean) {
+        progressBar.visibility = if (isLoading) View.VISIBLE else View.GONE
     }
 }
