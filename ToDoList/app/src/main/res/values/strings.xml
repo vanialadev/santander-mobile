@@ -2,4 +2,9 @@
     <string name="app_name">ToDoList</string>
     <string name="tarefas">Tarefas</string>
     <string name="adiciona_tarefas">adiciona tarefas</string>
+    <string name="titulo">Título</string>
+    <string name="data">Data</string>
+    <string name="hora">Hora</string>
+    <string name="criar_tarefa">Criar Tarefa</string>
+    <string name="cancelar">Cancelar</string>
 </resources>
