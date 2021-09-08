@@ -6,10 +6,11 @@ import android.os.Bundle
 import android.util.Log
 import br.com.vaniala.todolist.databinding.ActivityMainBinding
 import br.com.vaniala.todolist.datasource.TaskDataSource
+import br.com.vaniala.todolist.ui.AddTaskActivity.Companion.TASK_ID
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val adapter by lazy { TaskListAdapter()}
+    private val adapter by lazy { TaskListAdapter() }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.rvTasks.adapter = adapter
+        updateList()
 
         insertListeners()
     }
@@ -28,25 +30,27 @@ class MainActivity : AppCompatActivity() {
         }
 
         adapter.listenerEdit = {
-
-            Log.e("Tag", "listener $it")
+            val intent = Intent(this, AddTaskActivity::class.java)
+            intent.putExtra(TASK_ID, it.id)
+            startActivityForResult(intent, CREATE_NEW_TASK)
         }
 
         adapter.listenerDelete = {
-            Log.e("Tag", "listener $it")
-
+            TaskDataSource.deleteTask(it)
+            updateList()
         }
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == CREATE_NEW_TASK){
-            binding.rvTasks.adapter = adapter
-            adapter.submitList(TaskDataSource.getList())
-        }
+        if (requestCode == CREATE_NEW_TASK && resultCode == RESULT_OK) updateList()
     }
 
-    companion object {
-        private const val CREATE_NEW_TASK = 1000
+        private fun updateList() {
+            adapter.submitList(TaskDataSource.getList())
+        }
+
+        companion object {
+            private const val CREATE_NEW_TASK = 1000
+        }
     }
-}
