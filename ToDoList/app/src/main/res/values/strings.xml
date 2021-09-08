@@ -10,4 +10,5 @@
     <string name="passear_com_o_cachorro">Passear com o cachorro</string>
     <string name="editar">Editar</string>
     <string name="deletar">Deletar</string>
+    <string name="ops_voce_nao_possui_nnenhum_tarefa">Ops! Você não possui\nnenhum tarefa</string>
 </resources>
